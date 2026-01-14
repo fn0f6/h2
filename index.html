@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asr Al-Hamour | Official App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@400;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Cairo', 'sans-serif'],
+              display: ['Cinzel', 'Amiri', 'serif'],
+              arabic: ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              wood: {
+                100: '#d7c0a0',
+                300: '#a68058',
+                400: '#966F43',
+                500: '#8b5a2b',
+                600: '#754a22',
+                700: '#5c3a1e',
+                800: '#4a2e16',
+                900: '#3b220e',
+              },
+              gold: {
+                DEFAULT: '#ffd700',
+                dim: '#cfaf00',
+                glow: '#ffea70',
+                deep: '#b45309'
+              },
+              ocean: {
+                900: '#0a0a0a',
+                800: '#141414',
+                950: '#050505'
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'reveal': 'reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+              'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                '50%': { transform: 'translateY(-20px) rotate(1deg)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px) scale(0.98)' },
+                '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+              },
+              reveal: {
+                '0%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+                '100%': { transform: 'scaleX(1)', transformOrigin: 'left' },
+              },
+              glowPulse: {
+                '0%, 100%': { opacity: '0.3', filter: 'blur(8px)' },
+                '50%': { opacity: '0.6', filter: 'blur(12px)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      :root {
+        --primary-pirate: #10b981;
+        --secondary-pirate: #b45309;
+      }
+
+      body {
+        background-color: #050505;
+        color: #e2e8f0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .glass-card {
+        background: rgba(20, 20, 20, 0.4);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 215, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        border-color: rgba(255, 215, 0, 0.3);
+        background: rgba(30, 30, 30, 0.6);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      }
+
+      .text-glow {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      }
+
+      .btn-modern {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+
+      .btn-modern::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      .btn-modern:hover::before {
+        left: 100%;
+      }
+
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .reveal-on-scroll.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #050505; }
+      ::-webkit-scrollbar-thumb { background: #b45309; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #ffd700; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.90.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
