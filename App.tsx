@@ -1,5 +1,6 @@
 
 import React, { Suspense, lazy } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { useSettings, SettingsProvider } from './context/SettingsContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -85,6 +86,7 @@ export default function App() {
   return (
     <SettingsProvider>
       <AppContent />
+      <Analytics />
     </SettingsProvider>
   );
 }
